@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #FAF8F5;
+  --bg-2: #F1ECE4;
+  --ink: #1a1613;
+  --ink-2: #6b6259;
+  --accent: oklch(0.68 0.18 42);
+  --accent-soft: rgba(217, 119, 87, 0.12);
+  --line: rgba(26, 22, 19, 0.12);
+  --card: #ffffff;
+  --shadow: rgba(26, 22, 19, 0.10);
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+
+  /* Dedicated Footer Theme Variables */
+  --footer-bg: #1a1613;
+  --footer-ink: #FAF8F5;
+  --footer-subtext: rgba(255, 255, 255, 0.5);
+  --footer-border: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] {
+  --bg: #14110d;
+  --bg-2: #1e1a15;
+  --ink: #f4efe8;
+  --ink-2: #a79d91;
+  --accent: oklch(0.74 0.17 46);
+  --accent-soft: rgba(244, 180, 150, 0.16);
+  --line: rgba(244, 239, 232, 0.14);
+  --card: #201b15;
+  --shadow: rgba(0, 0, 0, 0.4);
+
+  /* Dedicated Footer Dark Theme Variables */
+  --footer-bg: #0d0a08;
+  --footer-ink: #f4efe8;
+  --footer-subtext: #a79d91;
+  --footer-border: rgba(244, 239, 232, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Custom Design Token Utilities */
+.bg-bg { background-color: var(--bg) !important; }
+.bg-bg2 { background-color: var(--bg-2) !important; }
+.bg-card { background-color: var(--card) !important; }
+.bg-ink { background-color: var(--ink) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.bg-accent-soft { background-color: var(--accent-soft) !important; }
+
+.text-ink { color: var(--ink) !important; }
+.text-ink2 { color: var(--ink-2) !important; }
+.text-accent { color: var(--accent) !important; }
+.text-bg { color: var(--bg) !important; }
+
+.border-line { border-color: var(--line) !important; }
+.border-accent { border-color: var(--accent) !important; }
+
+.font-serif { font-family: var(--font-serif) !important; }
+.font-sans { font-family: var(--font-sans) !important; }
+
+/* Responsive Navigation Utilities */
+@media (min-width: 860px) {
+  .nav-desktop-only {
+    display: flex !important;
+  }
+  .nav-mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 859px) {
+  .nav-desktop-only {
+    display: none !important;
+  }
+  .nav-mobile-only {
+    display: flex !important;
+  }
+}
+
+/* Case Study Cards Layouts */
+@media (min-width: 860px) {
+  .cs-case-study-card-1 {
+    display: grid !important;
+    grid-template-columns: 1.05fr 1fr !important;
+  }
+  .cs-case-study-card-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1.05fr !important;
+  }
+  .cs-case-study-card-3 {
+    display: grid !important;
+    grid-template-columns: 1.05fr 1fr !important;
+  }
+}
+
+@media (max-width: 859px) {
+  .cs-case-study-card-1,
+  .cs-case-study-card-2,
+  .cs-case-study-card-3 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* About Grid Layout */
+.cs-about-grid {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+@media (min-width: 860px) {
+  .cs-about-grid {
+    grid-template-columns: 1fr 1.35fr !important;
+  }
+}
+
+/* Custom Grid Pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(var(--line) 0.7px, transparent 0.7px);
+  background-size: 26px 26px;
+}
+
+/* Marquee Animations */
+@keyframes cs-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cs-marquee-rev {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes cs-marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.cs-track-marquee {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  animation: cs-marquee 26s linear infinite;
+}
+
+.cs-track-marquee:hover {
+  animation-play-state: paused;
+}
+
+.cs-track-marquee-rev {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: cs-marquee-rev 30s linear infinite;
+}
+
+.cs-track-marquee-rev:hover {
+  animation-play-state: paused;
+}
+
+.cs-track-marquee-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: max-content;
+  will-change: transform;
+  animation: cs-marquee-vertical 16s linear infinite;
+}
+
+.cs-track-marquee-vertical:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cs-track-marquee,
+  .cs-track-marquee-rev,
+  .cs-track-marquee-vertical {
+    animation: none !important;
+  }
+}
+
+/* Hover Effects matching original HTML */
+.hover-card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.hover-card-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px -34px var(--shadow);
+  border-color: var(--accent);
+}
+
+.hover-card-lift-small {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.hover-card-lift-small:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -22px var(--shadow);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
