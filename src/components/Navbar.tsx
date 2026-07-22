@@ -6,7 +6,7 @@ import { useTheme } from './ThemeProvider';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Navbar() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mounted } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleContactClick = (e: React.MouseEvent) => {
@@ -139,6 +139,7 @@ export function Navbar() {
             <button
               onClick={toggleTheme}
               title="Toggle theme"
+              suppressHydrationWarning
               style={{
                 width: '34px',
                 height: '34px',
@@ -155,7 +156,7 @@ export function Navbar() {
               }}
               className="hover:border-[var(--accent)] hover:text-[var(--accent)]"
             >
-              {theme === 'light' ? '☾' : '☀'}
+              {mounted && theme === 'dark' ? '☀' : '☾'}
             </button>
           </div>
 
@@ -164,6 +165,7 @@ export function Navbar() {
             <button
               onClick={toggleTheme}
               title="Toggle theme"
+              suppressHydrationWarning
               style={{
                 width: '34px',
                 height: '34px',
@@ -178,7 +180,7 @@ export function Navbar() {
                 justifyContent: 'center',
               }}
             >
-              {theme === 'light' ? '☾' : '☀'}
+              {mounted && theme === 'dark' ? '☀' : '☾'}
             </button>
 
             <button

@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-grid-pattern">
+      <body className="bg-grid-pattern" suppressHydrationWarning>
         <ThemeProvider>
           <CustomCursor />
           {children}
