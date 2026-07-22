@@ -9,7 +9,7 @@ export function AboutSection() {
   return (
     <section id="about" style={{ padding: '90px 0 50px', scrollMarginTop: '90px' }}>
       <div className="cs-about-grid">
-        <div style={{ position: 'sticky', top: '100px' }}>
+        <div className="cs-about-image-sticky">
           <ScrollReveal direction="left">
             <div
               style={{

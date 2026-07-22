@@ -152,6 +152,10 @@ a:hover {
   .cs-about-grid {
     grid-template-columns: 1fr 1.35fr !important;
   }
+  .cs-about-image-sticky {
+    position: sticky;
+    top: 100px;
+  }
 }
 
 /* Custom Grid Pattern */
