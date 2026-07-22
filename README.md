@@ -1,4 +1,4 @@
-# 🎨 CreativSingh — Modern Product Designer Portfolio & Case Study Template
+# Modern Product Designer Portfolio & Case Study Template
 
 A premium, interactive, and fully responsive Product Designer portfolio website built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**. Designed specifically for B2B/B2C SaaS Product Designers, UX Engineers, and Digital Creators to showcase featured work, case studies, and design philosophy.
 
